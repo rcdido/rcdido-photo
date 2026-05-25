@@ -99,6 +99,10 @@ a:hover {
   margin: 0;
 }
 
+.series-index ol li::marker {
+  content: "";
+}
+
 .series-index li {
   border-top: 1px solid var(--rule);
 }
