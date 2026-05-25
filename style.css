@@ -1,0 +1,362 @@
+/* ============================================================
+   Rob DiDomenico — Photographs
+   Aesthetic: ma, restraint, photos do the work.
+   ============================================================ */
+
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-faint: #9a9a9a;
+  --paper: #fafaf7;       /* warm off-white — like uncoated paper */
+  --paper-deep: #f0efe9;  /* for placeholders */
+  --rule: #e5e3dc;
+  --accent: #8b3a2f;      /* a single restrained accent — vermilion, used sparingly */
+
+  --serif: 'Lora', 'Iowan Old Style', Georgia, serif;
+  --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --measure: 32rem;
+  --gutter: clamp(1.5rem, 4vw, 3rem);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease, color 200ms ease;
+}
+
+a:hover {
+  border-bottom-color: var(--ink);
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+
+.home {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vh, 3rem) var(--gutter) 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.masthead {
+  margin-bottom: clamp(4rem, 10vh, 7rem);
+}
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: clamp(1.5rem, 3vh, 2rem);
+}
+.masthead h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.tagline {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  margin: 0;
+  text-transform: lowercase;
+}
+
+/* The series index — text only, deliberately quiet */
+
+.series-index {
+  flex: 1;
+}
+
+.series-index ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.series-index li {
+  border-top: 1px solid var(--rule);
+}
+
+.series-index li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.series-index a {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.5rem 0;
+  border-bottom: none;
+  transition: padding-left 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              color 300ms ease;
+}
+
+.series-index a:hover {
+  padding-left: 0.5rem;
+  color: var(--accent);
+}
+
+.series-index .num {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.series-index .title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  letter-spacing: 0.005em;
+}
+
+.series-index .meta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .series-index a {
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    row-gap: 0.25rem;
+  }
+  .series-index .meta {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+.site-footer {
+  margin-top: clamp(4rem, 8vh, 6rem);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  text-transform: lowercase;
+}
+
+.site-footer .dot {
+  margin: 0 0.5rem;
+}
+
+/* ============================================================
+   SERIES PAGE
+   ============================================================ */
+
+.series, .about {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vh, 5rem) var(--gutter) 6rem;
+}
+
+.series-header {
+  max-width: var(--measure);
+  margin: 0 auto clamp(4rem, 10vh, 7rem);
+  text-align: left;
+}
+
+.back {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  text-transform: lowercase;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.series-header h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: 0.005em;
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.series-note {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.series-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* The photographs — each one gets its own breath of space */
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(4rem, 10vh, 7rem);
+}
+
+.photos figure {
+  margin: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.frame {
+  background: var(--paper-deep);
+  position: relative;
+  /* subtle paper texture via gradient */
+  background-image:
+    linear-gradient(135deg,
+      rgba(255,255,255,0.4) 0%,
+      rgba(0,0,0,0.02) 100%);
+  /* the number sits in the placeholder so you can see the layout breathing */
+}
+
+.frame::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.frame-landscape {
+  width: min(48rem, 100%);
+  aspect-ratio: 3/2;
+}
+
+.frame-portrait {
+  width: min(32rem, 75%);
+  aspect-ratio: 2/3;
+}
+
+.frame-square {
+  width: min(36rem, 85%);
+  aspect-ratio: 1/1;
+}
+
+.photos figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.photos figcaption {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  margin-top: 1rem;
+  text-transform: lowercase;
+}
+
+.series-footer {
+  margin-top: clamp(6rem, 12vh, 9rem);
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  text-transform: lowercase;
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+
+.about-body {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+.about-body p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin: 0 0 1.75rem;
+  color: var(--ink-soft);
+}
+
+.about-body p:first-of-type::first-line {
+  color: var(--ink);
+}
+
+.about-body .contact {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  font-size: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.about-body .contact:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.about-body .contact + .contact {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.about-body .label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Selection — even small details matter
+   ============================================================ */
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.series-index .meta { display: none; }
