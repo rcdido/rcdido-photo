@@ -283,8 +283,12 @@ a:hover {
 .photos figure img {
   display: block;
   max-width: 100%;
+  max-height: 85vh;
+  width: auto;
   height: auto;
+  margin: 0 auto;
 }
+
 
 .photos figcaption {
   font-family: var(--mono);
