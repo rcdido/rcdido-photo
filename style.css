@@ -280,6 +280,11 @@ a:hover {
   aspect-ratio: 1/1;
 }
 
+.photos figure {
+  max-width: 48rem;
+  width: 100%;
+}
+
 .photos figure img {
   display: block;
   max-width: 100%;
@@ -287,6 +292,7 @@ a:hover {
   width: auto;
   height: auto;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 
