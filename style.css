@@ -360,3 +360,58 @@ a:hover {
 }
 
 .series-index .meta { display: none; }
+/* ============================================================
+   TRAVEL HUB — clickable trip cards
+   ============================================================ */
+
+.trip-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: none;
+  transition: opacity 300ms ease;
+}
+
+.trip-card figure {
+  margin: 0;
+  position: relative;
+}
+
+.trip-card figcaption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-top: 1rem;
+  letter-spacing: 0.005em;
+  text-transform: lowercase;
+  transition: color 300ms ease;
+}
+
+.trip-card .arrow {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  transform: translateX(0);
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              color 300ms ease;
+}
+
+.trip-card:hover figcaption {
+  color: var(--accent);
+}
+
+.trip-card:hover .arrow {
+  transform: translateX(0.5rem);
+  color: var(--accent);
+}
+
+.trip-card:hover img {
+  opacity: 0.92;
+}
+
+.trip-card img {
+  transition: opacity 300ms ease;
+}
