@@ -99,8 +99,28 @@ a:hover {
   margin: 0;
 }
 
-.series-index ol li::marker {
-  content: "";
+.series-index ol,
+.series-index ul {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0;
+}
+
+.series-index ol li,
+.series-index ul li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+.series-index ol li::marker,
+.series-index ul li::marker {
+  content: "" !important;
+  display: none !important;
+}
+
+.series-index ol li::before,
+.series-index ul li::before {
+  content: none !important;
 }
 
 .series-index li {
